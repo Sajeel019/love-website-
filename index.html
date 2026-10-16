@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Little Question 💗</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="floating-hearts" aria-hidden="true"></div>
+
+  <main class="card">
+    <section id="question-screen" class="screen active">
+      <div class="eyebrow">JUST ONE LITTLE QUESTION</div>
+      <div class="bear" aria-hidden="true">🧸💗</div>
+      <h1>Do you love me?</h1>
+      <p class="subtitle">Be honest… my heart is waiting for your answer 🥹</p>
+
+      <div class="buttons" id="button-area">
+        <button id="yes-btn" class="btn yes-btn">Yes! 💖</button>
+        <button id="no-btn" class="btn no-btn">No 🙈</button>
+      </div>
+      <p id="hint" class="hint" aria-live="polite">Choose wisely 😉</p>
+    </section>
+
+    <section id="result-screen" class="screen" aria-live="polite">
+      <div class="celebration" aria-hidden="true">💘 ✨ 💗 ✨ 💘</div>
+      <div class="bear happy" aria-hidden="true">🥰</div>
+      <h1>I knew it! 💞</h1>
+      <p class="subtitle">You just made my whole world brighter.</p>
+      <div class="video-wrap">
+        <video id="love-video" controls autoplay loop playsinline>
+          <source src="Love me.mp4" type="video/mp4" />
+          Your browser does not support HTML video.
+        </video>
+        <div id="video-placeholder" class="video-placeholder">
+          <div class="play-icon">▶</div>
+          <strong>Your romantic video goes here</strong>
+          <span>Add a video named <code>Love me.mp4</code> to this folder.</span>
+        </div>
+      </div>
+      <p class="love-note">Sending you a thousand hugs and one big kiss. 💋</p>
+      <button id="again-btn" class="btn yes-btn again-btn">Replay the magic 💗</button>
+    </section>
+  </main>
+
+  <footer>MADE WITH LOVE <span>♥</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>

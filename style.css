@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  --pink: #ff4f87;
+  --deep-pink: #e92e70;
+  --soft-pink: #fff0f5;
+  --ink: #432533;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px 16px 54px;
+  overflow-x: hidden;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 15% 15%, rgba(255,255,255,.95), transparent 28%),
+    radial-gradient(circle at 85% 80%, rgba(255,190,215,.7), transparent 30%),
+    linear-gradient(135deg, #ffe2ec, #fff5f8 48%, #ffd4e4);
+}
+.floating-hearts { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.float-heart {
+  position: absolute; bottom: -40px; color: rgba(255,79,135,.38);
+  animation: float-up linear forwards; user-select: none;
+}
+@keyframes float-up { to { transform: translateY(-115vh) rotate(25deg); opacity: 0; } }
+.card {
+  position: relative; z-index: 1; width: min(100%, 560px); padding: 42px 28px 34px;
+  border: 1px solid rgba(255,255,255,.85); border-radius: 30px;
+  background: rgba(255,255,255,.76); backdrop-filter: blur(14px);
+  box-shadow: 0 24px 70px rgba(172, 53, 98, .18); text-align: center;
+}
+.screen { display: none; animation: pop-in .45s ease both; }
+.screen.active { display: block; }
+@keyframes pop-in { from { opacity: 0; transform: translateY(12px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+.eyebrow { font-size: .72rem; letter-spacing: .22em; font-weight: 700; color: #c65b82; }
+.bear { margin: 18px 0 8px; font-size: 4rem; filter: drop-shadow(0 8px 8px rgba(233,46,112,.12)); }
+h1 { margin: 10px 0 12px; font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 8vw, 3.35rem); line-height: 1.1; color: #682744; }
+.subtitle { max-width: 390px; margin: 0 auto; color: #906477; line-height: 1.65; font-size: 1rem; }
+.buttons { min-height: 76px; margin: 28px auto 8px; display: flex; align-items: center; justify-content: center; gap: 16px; position: relative; }
+.btn { border: 0; border-radius: 999px; padding: 14px 28px; font: 700 1rem 'DM Sans', sans-serif; cursor: pointer; transition: transform .18s, box-shadow .18s, background .18s; }
+.btn:focus-visible { outline: 3px solid #7c3153; outline-offset: 4px; }
+.btn:hover { transform: translateY(-2px); }
+.yes-btn { color: white; background: linear-gradient(135deg, #ff6b9c, #e92e70); box-shadow: 0 10px 22px rgba(233,46,112,.25); }
+.yes-btn:hover { box-shadow: 0 14px 28px rgba(233,46,112,.34); }
+.no-btn { color: #9a5571; background: #fff; border: 1px solid #f4c6d7; box-shadow: 0 7px 16px rgba(100,40,65,.08); }
+.hint { color: #bd7792; min-height: 22px; font-size: .85rem; }
+.celebration { letter-spacing: .2em; font-size: 1.3rem; animation: sparkle 1.4s ease-in-out infinite alternate; }
+@keyframes sparkle { to { transform: scale(1.06); filter: brightness(1.2); } }
+.happy { font-size: 4.5rem; margin: 10px 0; }
+.video-wrap { position: relative; margin: 24px auto 16px; width: min(100%, 410px); aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden; background: linear-gradient(135deg,#ffbad0,#ffeaf1); box-shadow: 0 12px 28px rgba(116,40,70,.15); }
+video { display: block; width: 100%; height: 100%; object-fit: cover; background: #f9dbe6; }
+.video-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; padding: 16px; color: #8b3157; background: linear-gradient(135deg, rgba(255,225,236,.96), rgba(255,244,248,.92)); }
+.video-placeholder span { font-size: .78rem; color: #a66b82; }
+.video-placeholder code { background: rgba(255,255,255,.7); padding: 2px 5px; border-radius: 5px; }
+.play-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: white; color: var(--pink); padding-left: 3px; box-shadow: 0 5px 15px #e88bab55; }
+.love-note { color: #9b5873; line-height: 1.6; }
+.again-btn { margin-top: 6px; }
+footer { position: fixed; z-index: 1; bottom: 16px; color: #bd7792; letter-spacing: .18em; font-size: .68rem; font-weight: 700; }
+footer span { color: var(--pink); }
+@media (max-width: 420px) {
+  .card { padding: 34px 18px 28px; border-radius: 24px; }
+  .btn { padding: 13px 23px; }
+}
